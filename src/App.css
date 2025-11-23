@@ -1,0 +1,11 @@
+.totalSold{
+    color: green;
+}
+
+.totalStockBought{
+    color: blue;
+}
+
+.totalLeftToSell{
+    color: red;
+}

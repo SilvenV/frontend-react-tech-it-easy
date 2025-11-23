@@ -1,0 +1,11 @@
+// opdracht 1a
+
+function totalSold(array){
+    let total=0;
+    for (let i = 0; i < array.length; i++) {
+        total += array[i].sold;
+    }
+    return total;
+}
+
+export default totalSold;
