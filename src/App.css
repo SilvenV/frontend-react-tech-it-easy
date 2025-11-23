@@ -9,3 +9,21 @@
 .totalLeftToSell{
     color: red;
 }
+
+.bestSoldDisplay{
+    border: dashed 1px;
+    display: flex;
+    padding: 3%;
+}
+
+.bestSoldDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 50px;
+}
+
+.iconSmall{
+    height: 12px;
+    width: 12px;
+}

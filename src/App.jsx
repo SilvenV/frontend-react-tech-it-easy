@@ -1,20 +1,44 @@
 import './App.css';
-import {inventory} from './constants/inventory.js';
+import {bestSellingTv, inventory} from './constants/inventory.js';
 import './helpers/totalSoldHelper.js'
 import totalSold from "./helpers/totalSoldHelper.js";
 import totalStockBought from "./helpers/totalStockBoughtHelper.js";
 import totalLeftToSell from "./helpers/totalLeftToSellHelper.js";
+import generateTVNameString from "./helpers/generateTVNameStringHelper.js";
+import generatePriceString from "./helpers/generatePriceStringHelper.js";
+import availableScreenSizes from "./helpers/availableScreenSizesHelper.js";
+import generateTVNameStringHelper from "./helpers/generateTVNameStringHelper.js";
+import checkImg from './assets/check.png';
+import minusImg from './assets/minus.png';
+
+
+const check = <img src={checkImg} className='iconSmall' alt='Check'/>
+const minus = <img src={minusImg} className='iconSmall' alt='NotCheck'/>
 
 function App() {
     console.log(`Totaal aantal tv's verkocht: ${totalSold(inventory)}.`);
     console.log(`Totaal aantal tv's ingekocht: ${totalStockBought(inventory)}.`);
     console.log(`Totaal aantal tv's nog te verkopen: ${totalLeftToSell(inventory)}.`);
+    console.log(generateTVNameString(bestSellingTv));
+    console.log(generatePriceString(bestSellingTv));
+    console.log(availableScreenSizes(bestSellingTv));
+
     return (
         <>
-            <h1>Begin hier met met maken van de applicatie!</h1>
-            <p className='totalSold'>{totalSold(inventory)}</p>
-            <p className='totalStockBought'>{totalStockBought(inventory)}</p>
-            <p className='totalLeftToSell'>{totalLeftToSell(inventory)}</p>
+            <div className='bestSoldDisplay'>
+                <img src={bestSellingTv.sourceImg} alt='Best-Selling TV'/>
+                <div className='bestSoldDescription'>
+                    <h3>{generateTVNameStringHelper(bestSellingTv)}</h3>
+                    <h2>{generatePriceString(bestSellingTv)}</h2>
+                    <h3>{availableScreenSizes(bestSellingTv)}</h3>
+                    <h4>{check} wifi {minus} speech {check} hdr {check} bluetooth {minus} ambilight</h4>
+                </div>
+            </div>
+            <div className='buttonsDiv'>
+                <button onClick={(e) => console.log(e.currentTarget.textContent)}>Meest verkocht eerst</button>
+                <button onClick={(e) => console.log(e.currentTarget.textContent)}>Goedkoopste eerst</button>
+                <button onClick={(e) => console.log(e.currentTarget.textContent)}>Meest geschikt voor sport eerst</button>
+            </div>
         </>
     )
 }
