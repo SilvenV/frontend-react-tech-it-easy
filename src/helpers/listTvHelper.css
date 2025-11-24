@@ -1,0 +1,22 @@
+.tvWrapper{
+    display: flex;
+    padding: 3%;
+}
+
+.tvWrapper img{
+    max-width: 500px;
+    /*Ik snap niet helemaal waarom er in dit geval een max width constraint nodig is om te voorkomen dat de img opblaast,
+    terwijl er bij de bestselling tv in deel 1 geen issue was*/
+    height: auto;
+}
+
+.tvDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 50px;
+}
+
+.tvList{
+    list-style-type: none;
+}

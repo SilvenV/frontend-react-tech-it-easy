@@ -11,11 +11,17 @@ import generateTVNameStringHelper from "./helpers/generateTVNameStringHelper.js"
 import checkImg from './assets/check.png';
 import minusImg from './assets/minus.png';
 
+import showOutcomeInConsole from './constants/oefenbestand.js';
+import brandLister from "./helpers/brandListHelper.jsx";
+import listTVs from "./helpers/listTvHelper.jsx";
 
 const check = <img src={checkImg} className='iconSmall' alt='Check'/>
 const minus = <img src={minusImg} className='iconSmall' alt='NotCheck'/>
 
 function App() {
+
+    showOutcomeInConsole();
+
     console.log(`Totaal aantal tv's verkocht: ${totalSold(inventory)}.`);
     console.log(`Totaal aantal tv's ingekocht: ${totalStockBought(inventory)}.`);
     console.log(`Totaal aantal tv's nog te verkopen: ${totalLeftToSell(inventory)}.`);
@@ -34,10 +40,16 @@ function App() {
                     <h4>{check} wifi {minus} speech {check} hdr {check} bluetooth {minus} ambilight</h4>
                 </div>
             </div>
+
+            <div>{listTVs(inventory)}</div>
+
             <div className='buttonsDiv'>
                 <button onClick={(e) => console.log(e.currentTarget.textContent)}>Meest verkocht eerst</button>
                 <button onClick={(e) => console.log(e.currentTarget.textContent)}>Goedkoopste eerst</button>
                 <button onClick={(e) => console.log(e.currentTarget.textContent)}>Meest geschikt voor sport eerst</button>
+            </div>
+            <div>
+                {brandLister(inventory)}
             </div>
         </>
     )

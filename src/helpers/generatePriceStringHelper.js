@@ -1,4 +1,4 @@
-// opdracht 2b
+// opdracht 1.2b
 
 function generatePriceString(tv){
     return `€${tv.price},-`;
