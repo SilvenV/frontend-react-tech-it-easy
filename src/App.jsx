@@ -44,15 +44,34 @@ function App() {
             <div>{listTVs(inventory)}</div>
 
             <div className='buttonsDiv'>
-                <button onClick={(e) => console.log(e.currentTarget.textContent)}>Meest verkocht eerst</button>
-                <button onClick={(e) => console.log(e.currentTarget.textContent)}>Goedkoopste eerst</button>
-                <button onClick={(e) => console.log(e.currentTarget.textContent)}>Meest geschikt voor sport eerst</button>
+                <button onClick={() => sortBySold(inventory)}>Meest verkocht eerst</button>
+                <button onClick={() => sortByCheapest(inventory)}>Goedkoopste eerst</button>
+                <button onClick={() => sortByRefreshRate(inventory)}>Meest geschikt voor sport eerst
+                </button>
             </div>
             <div>
                 {brandLister(inventory)}
             </div>
         </>
     )
+}
+
+function sortBySold(array) {
+    console.log(array.sort((a, b) => {
+        return b.sold - a.sold;
+    }));
+}
+
+function sortByCheapest(array) {
+    console.log(array.sort((a, b) => {
+        return a.price - b.price;
+    }));
+}
+
+function sortByRefreshRate(array) {
+    console.log(array.sort((a, b) => {
+        return b.refreshRate - a.refreshRate;
+    }))
 }
 
 export default App
