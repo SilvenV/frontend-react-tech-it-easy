@@ -75,3 +75,5 @@ function sortByRefreshRate(array) {
 }
 
 export default App
+
+// Minpunten omdat ik al die tijd op main heb gewerkt, jeetje
