@@ -1,4 +1,6 @@
-import './App.css';
+
+// Minpunten omdat ik al die tijd op main heb gewerkt, jeetjeimport './App.css';
+
 import {bestSellingTv, inventory} from './constants/inventory.js';
 import './helpers/totalSoldHelper.js'
 import totalSold from "./helpers/totalSoldHelper.js";
@@ -75,5 +77,3 @@ function sortByRefreshRate(array) {
 }
 
 export default App
-
-// Minpunten omdat ik al die tijd op main heb gewerkt, jeetje
